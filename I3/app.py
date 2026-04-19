@@ -2,9 +2,6 @@
 Mental Health Crisis Early-Warning System
 State-Level Prevalence Analyzer
 
-Data source: SAMHSA NSDUH 2023-2024 State Prevalence Tables
-https://www.samhsa.gov/data/data-we-collect/nsduh-national-survey-drug-use-and-health/state-releases
-
 Usage:
     python app.py                  # Full dashboard
     python app.py --state WA       # Single state report
