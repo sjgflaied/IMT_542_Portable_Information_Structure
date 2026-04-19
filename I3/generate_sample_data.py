@@ -1,8 +1,3 @@
-# This script generates sample data matching the exact structure of
-# SAMHSA NSDUH 2023-2024 State Prevalence Tables (CSV)
-# Real data source: https://www.samhsa.gov/data/data-we-collect/nsduh-national-survey-drug-use-and-health/state-releases
-# Direct CSV download: 2023-2024 State Prevalence Tables: CSV (ZIP)
-
 import csv
 
 states = [
@@ -21,7 +16,6 @@ states = [
     ("Wisconsin","WI"),("Wyoming","WY")
 ]
 
-# Representative values approximating real NSDUH state-level estimates
 data = {
     "AL": (18.2, 7.1, 4.2, 55.3), "AK": (22.1, 9.4, 5.8, 48.7),
     "AZ": (19.8, 8.2, 5.1, 52.4), "AR": (20.3, 7.8, 4.9, 51.8),
