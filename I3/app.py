@@ -17,8 +17,6 @@ import argparse
 from statistics import mean, stdev
 
 
-# ── 1. Read & transform data ─────────────────────────────────────────────────
-
 def load_data(filepath="nsduh_state_mental_health_2023.csv"):
     """Read NSDUH CSV and return list of state dicts."""
     records = []
@@ -34,8 +32,6 @@ def load_data(filepath="nsduh_state_mental_health_2023.csv"):
             })
     return records
 
-
-# ── 2. Compute derived metrics ────────────────────────────────────────────────
 
 def compute_care_gap(record):
     """
@@ -83,9 +79,6 @@ def enrich(records):
         r["risk_tier"]  = risk_tier(r["risk_score"])
 
     return records, avg_mi, avg_smi, avg_gap
-
-
-# ── 3. Visualize ──────────────────────────────────────────────────────────────
 
 def bar(value, max_val=30, width=30, fill="█"):
     filled = int((value / max_val) * width)
@@ -167,8 +160,6 @@ def print_high_risk(records):
         print(f"    {bar(r['care_gap'], max_val=22)}  untreated")
 
 
-# ── 4. Predict ────────────────────────────────────────────────────────────────
-
 def predict_surge_risk(records):
     """
     Simple rule-based surge predictor:
@@ -189,8 +180,6 @@ def predict_surge_risk(records):
     else:
         print("  No states currently meet surge-probable threshold.")
 
-
-# ── 5. Main ───────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
